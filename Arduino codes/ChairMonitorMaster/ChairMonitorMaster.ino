@@ -13,6 +13,9 @@ const int secondMega = 12;
 Madgwick filter;
 unsigned long millisPerReading, millisPrevious;
 unsigned long messageCounter = 0; // number of messages sent
+
+int distances[6]; //global array holding six distance sensor readings
+  
 void setup() {
   // join I2C bus (I2Cdev library doesn't do this automatically)
   Wire.begin();
@@ -33,7 +36,6 @@ void setup() {
 }
 void loop() {
   int roll, pitch, heading;
-  int distances[6]; //array holding six distance sensor readings
   // check if it's time to read data and update the filter
   if (millis() - millisPrevious >= millisPerReading) {
     millisPrevious = millis(); //reset the millis time counter

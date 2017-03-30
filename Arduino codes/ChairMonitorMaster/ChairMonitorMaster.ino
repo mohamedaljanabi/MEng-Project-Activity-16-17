@@ -1,4 +1,4 @@
-// chairMonitorMaster
+// ChairMonitorMaster
 #include <Wire.h>  // required for I2C
 //IMU libraries:
 #include <CurieIMU.h>

@@ -1,7 +1,4 @@
-/*
-   Angle_master_mm.ino
-*/
-
+// chairMonitorMaster
 #include <Wire.h>  // required for I2C
 //IMU libraries:
 #include <CurieIMU.h>

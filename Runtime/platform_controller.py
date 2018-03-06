@@ -19,13 +19,14 @@ sys.path.insert(0, './client')  # the relative dir containing client files
 sys.path.insert(0, './coaster')  # the relative dir containing coaster files
 sys.path.insert(0, './flight_sim')  # the relative dir containing coaster files
 
+from monitor import InputInterface
 #  from V1_platform_input import InputInterface
 #  from flight_sim_client import InputInterface
 #  from platform_input_tk import InputInterface   #  tkinter gui
 #  from platform_input import InputInterface    #  keyboard
 #  from platform_input_simple_UDP import InputInterface #  UDP
 # from platform_input_threadedUDP import InputInterface #  threaded UDP
-from coaster_client import InputInterface
+# from coaster_client import InputInterface
 from kinematics import Kinematics
 from shape import Shape
 from platform_output import OutputInterface

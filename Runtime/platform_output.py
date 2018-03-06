@@ -29,8 +29,8 @@ if not TESTING:
   Import platform configuration
 """
 # from ConfigServo import *
-#  from ConfigV1 import *
-from ConfigV2 import *
+from ConfigV1 import *
+#  from ConfigV2 import *
 #  from ConfigServoSim import *
 #  from ConfigServoSimChair import *
 #  from ConfigNexgenModel import *
@@ -41,7 +41,7 @@ PRINT_PRESSURE_DELTA = True
 WAIT_FESTO_RESPONSE = False #True
 OLD_FESTO_CONTROLLER = False
 
-MONITOR_PORT = 10010 # echo actuator lengths to this port
+MONITOR_PORT = 10011 # echo actuator lengths to this port
 MONITOR_ADDR = ('localhost', MONITOR_PORT)
 
 if TESTING:
@@ -378,7 +378,7 @@ class OutputInterface(object):
             print "serial not open"
 
     def _move_to(self, lengths):
-        print "lengths:\t ", ",".join('  %d' % item for item in lengths)
+        # print "lengths:\t ", ",".join('  %d' % item for item in lengths)
         now = time.clock()
         timeDelta = now - self.prev_time
         self.prev_time = now
@@ -428,7 +428,7 @@ class OutputInterface(object):
             try:
                 if not OLD_FESTO_CONTROLLER:
                     muscle_pressures.append(self.activate_piston_flag)
-                    print "muscle pressures:",  muscle_pressures
+                    # print "muscle pressures:",  muscle_pressures
                     packet = easyip.Factory.send_flagword(0, muscle_pressures)
                     try:
                         self._send_packet(packet)
